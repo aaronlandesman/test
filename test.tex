@@ -1,0 +1,286 @@
+%        File: test.tex
+%     Created: Sun Aug 14 11:00 AM 2022 E
+% Last Change: Sun Aug 14 11:00 AM 2022 E
+%
+%%%%%%%%%%%%%%%%%%%%%
+%   AMS packages    %
+%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12 pt]{amsart}
+
+\usepackage{hyperref}
+\usepackage{etex}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+\usepackage{subfiles}
+\usepackage{mathpazo}
+%\usepackage{euler}
+\usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
+\setlength{\marginparwidth}{2cm}
+\usepackage{morefloats}
+\usepackage{pdfpages}
+\usepackage{thm-restate}
+\usepackage[utf8]{inputenc}
+\usepackage{epigraph}
+\usepackage{csquotes}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{adjustbox}
+
+
+
+\graphicspath{ {images/} }
+
+\RequirePackage{color}
+\definecolor{myred}{rgb}{0.75,0,0}
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{myblue}{rgb}{0,0,0.65}
+
+\usepackage{hyperref}
+\hypersetup{citecolor=blue}
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{counterexample}[theorem]{Counterexample}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture} 
+\newtheorem{goal}[theorem]{Goal}
+\newtheorem{warn}[theorem]{Warning}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{notation}[theorem]{Notation}
+\theoremstyle{remark}
+\numberwithin{equation}{section}
+  
+\newcommand\nc{\newcommand}
+\nc\on{\operatorname}
+\nc\renc{\renewcommand}
+\newcommand\se{\section}
+\newcommand\ssec{\subsection}
+\newcommand\sssec{\subsubsection}
+
+\newcommand\ba{\mathbb A}
+\newcommand\bb{\mathbb B}
+\newcommand\bc{\mathbb C}
+\newcommand\bd{\mathbb D}
+\newcommand\be{\mathbb E}
+\newcommand\bbf{\mathbb F}
+\newcommand\bg{\mathbb G}
+\newcommand\bh{\mathbb H}
+\newcommand\bi{\mathbb I}
+\newcommand\bj{\mathbb J}
+\newcommand\bl{\mathbb L}
+\newcommand\bm{\mathbb M}
+\newcommand\bn{\mathbb N}
+\newcommand\bo{\mathbb O}
+\newcommand\bp{\mathbb P}
+\newcommand\bq{\mathbb Q}
+\newcommand\br{\mathbb R}
+\newcommand\bs{\mathbb S}
+\newcommand\bt{\mathbb T}
+\newcommand\bu{\mathbb U}
+\newcommand\bv{\mathbb V}
+\newcommand\bw{\mathbb W}
+\newcommand\bx{\mathbb X}
+\newcommand\by{\mathbb Y}
+\newcommand\bz{\mathbb Z}
+
+\newcommand\fp{{\mathbb F_p}}
+\newcommand\fq{{\mathbb F_q}}
+
+\newcommand\fa{{\mathfrak a}}
+\newcommand\fm{{\mathfrak m}}
+\newcommand\fg{{\mathfrak g}}
+\newcommand\fh{{\mathfrak h}}
+\newcommand\fgl{{\mathfrak {gl}}}
+\newcommand\fsu{{\mathfrak {su}}}
+\newcommand\fsl{{\mathfrak {sl}}}
+\newcommand\fso{{\mathfrak {so}}}
+\newcommand\fo{{\mathfrak {o}}}
+\newcommand\fu{{\mathfrak {u}}}
+\newcommand\fsp{{\mathfrak {sp}}}
+\newcommand\fgsp{{\mathfrak {gsp}}}
+
+
+
+\newcommand\sca{\mathscr A}
+\newcommand\scb{\mathscr B}
+\newcommand\scc{\mathscr C}
+\newcommand\scd{\mathscr D}
+\newcommand\sce{\mathscr E}
+\newcommand\scf{\mathscr F}
+\newcommand\scg{\mathscr G}
+\newcommand\sch{\mathscr H}
+\newcommand\sci{\mathscr I}
+\newcommand\scj{\mathscr J}
+\newcommand\sck{\mathscr K}
+\newcommand\scl{\mathscr L}
+\newcommand\scm{\mathscr M}
+\newcommand\scn{\mathscr N}
+\newcommand\sco{\mathscr O}
+\newcommand\scp{\mathscr P}
+\newcommand\scq{\mathscr Q}
+\newcommand\scs{\mathscr S}
+\newcommand\sct{\mathscr T}
+\newcommand\scu{\mathscr U}
+\newcommand\scv{\mathscr V}
+\newcommand\scw{\mathscr W}
+\newcommand\scx{\mathscr X}
+\newcommand\scy{\mathscr Y}
+\newcommand\scz{\mathscr Z}
+
+\newcommand \ra{\rightarrow}
+\newcommand \xra{\xrightarrow}
+\newcommand \la{\rightarrow}
+\newcommand \xla{\xrightarrow}
+\DeclareMathOperator\spec{\text{Spec}}
+\DeclareMathOperator\proj{\text{Proj}}
+\DeclareMathOperator\rspec{\textit{Spec }}
+\DeclareMathOperator\rproj{\textit{Proj }}
+\newcommand*{\shom}{\mathscr{H}\kern -.5pt om}
+\newcommand*{\stor}{\mathscr{T}\kern -.5pt or}
+\newcommand*{\sext}{\mathscr{E}\kern -.5pt xt}
+\newcommand \mg{{\mathscr M_g}}
+
+\makeatletter
+\providecommand\@dotsep{5}
+\renewcommand{\listoftodos}[1][\@todonotes@todolistname]{%
+\@starttoc{tdo}{#1}}
+\makeatother
+
+\newcommand{\customlabel}[2]{\protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }\hypertarget{#1}{#2}}
+\DeclareMathOperator\id{id}
+\DeclareMathOperator\sh{sh}
+\DeclareMathOperator\tor{Tor}
+\DeclareMathOperator\ext{Ext}
+\DeclareMathOperator\red{red}
+\renewcommand\hom{\mathrm{Hom}}
+\DeclareMathOperator\coker{coker}
+\DeclareMathOperator\ord{ord}
+\DeclareMathOperator\hilb{Hilb}
+\DeclareMathOperator\conf{Conf}
+\DeclareMathOperator\rk{rk}
+\DeclareMathOperator\di{div}
+\DeclareMathOperator\pic{Pic}
+\DeclareMathOperator\lcm{lcm}
+\DeclareMathOperator\rank{rank}
+\DeclareMathOperator\codim{codim}
+\DeclareMathOperator\vol{Vol}
+\DeclareMathOperator\supp{Supp}
+\DeclareMathOperator\spn{Span}
+\DeclareMathOperator\im{im}
+\DeclareMathOperator\End{End}
+\DeclareMathOperator\sym{Sym}
+\DeclareMathOperator\pgl{PGL}
+\DeclareMathOperator\sat{Sat}
+\DeclareMathOperator\blow{Bl}
+\renewcommand\sp{\mathrm{Sp}}
+\DeclareMathOperator\gsp{GSp}
+\DeclareMathOperator\sgn{sgn}
+\DeclareMathOperator\triv{triv}
+\DeclareMathOperator\ab{ab}
+\DeclareMathOperator\std{std}
+\DeclareMathOperator\perm{perm}
+\DeclareMathOperator\gal{Gal}
+\DeclareMathOperator\tr{tr}
+\DeclareMathOperator\frob{Frob}
+\DeclareMathOperator\chr{\text{char}}
+\newcommand\bk{{\Bbbk}}
+\newcommand\ul{\underline}
+\newcommand\ol{\overline}
+\DeclareMathOperator\pr{pr}
+\DeclareMathOperator\ev{ev}
+\DeclareMathOperator\cl{Cl}
+\DeclareMathOperator\res{Res}
+\DeclareMathOperator\prob{Prob}
+\DeclareMathOperator\maj{maj}
+\DeclareMathOperator\inv{inv}
+\DeclareMathOperator\isom{isom}
+\DeclareMathOperator\mor{mor}
+\DeclareMathOperator\aut{Aut}
+\DeclareMathOperator\gl{GL}
+\DeclareMathOperator\spin{Spin}
+\DeclareMathOperator\pin{Pin}
+\renewcommand\sl{\mathrm{SL}}
+\DeclareMathOperator\asl{\mathrm{ASL}}
+\DeclareMathOperator\mat{Mat}
+\DeclareMathOperator\stab{Stab}
+\DeclareMathOperator\so{SO}
+\DeclareMathOperator\su{SU}
+\renewcommand\u{\mathrm{U}}
+\DeclareMathOperator\lie{Lie}
+\DeclareMathOperator\ad{ad}
+\DeclareMathOperator\Ad{Ad}
+\renewcommand\o{{\rm{O}}}
+\newcommand\osp{{\rm{O^*}}}
+\DeclareMathOperator\sel{Sel}
+\DeclareMathOperator\Br{Br}
+\DeclareMathOperator\val{val}
+\DeclareMathOperator\quo{Quo}
+\DeclareMathOperator\diag{diag}
+\DeclareMathOperator\out{Out}
+\DeclareMathOperator\orbits{Orbits}
+\DeclareMathOperator\sm{sm}
+\DeclareMathOperator\shf{shf}
+\DeclareMathOperator\disc{disc}
+\DeclareMathOperator\average{Average}
+\DeclareMathOperator\spinor{sp}
+\DeclareMathOperator\grp{grp}
+\DeclareMathOperator\et{\acute et}
+\DeclareMathOperator\tame{tame}
+\DeclareMathOperator\sing{sing}
+\DeclareMathOperator\an{an}
+\DeclareMathOperator\jac{Jac}
+\DeclareMathOperator\colim{colim}
+
+\renewcommand\top{\mathrm{top}}
+\DeclareFontFamily{U}{wncy}{}
+\DeclareFontShape{U}{wncy}{m}{n}{<->wncyr10}{}
+\DeclareSymbolFont{mcy}{U}{wncy}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathord}{mcy}{"58} 
+
+\renewcommand{\sectionautorefname}{\S$\!$}
+\renewcommand{\subsectionautorefname}{\S$\!$}
+\renewcommand{\subsubsectionautorefname}{\S$\!$}
+
+
+\setcounter{MaxMatrixCols}{20}
+
+\def\listtodoname{List of Todos}
+\def\listoftodos{\@starttoc{tdo}\listtodoname}
+
+\title{Test}
+\author{Aaron Landesman}
+
+\usepackage{microtype}
+\begin{document}
+
+\maketitle
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{/home/aaron/Dropbox/master}
+
+\end{document}
+
+
